@@ -35,6 +35,7 @@ GIF created with ...  LICEcap
 ## Notes
 
 Describe any challenges encountered while building the app.
+While building the app, I faced the most challenges with the reduce and filter functions.
 
 ## License
 
