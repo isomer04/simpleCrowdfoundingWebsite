@@ -146,18 +146,27 @@ allBtn.addEventListener("click", showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-const numOfUnfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal);
+const numOfUnfundedGames = GAMES_JSON.filter(
+  (game) => game.pledged < game.goal
+);
 
 // create a string that explains the number of unfunded games using the ternary operator
-const displayStr = `A total of $${totalAmountRaised.toLocaleString("en-us")} has been raised for ${GAMES_JSON.length} games. Currently, ${(numOfUnfundedGames.length === 0) ? 'All games are funded. Thank you for helping us!' : (numOfUnfundedGames.length === 1) ? 'One game remains unfunded. We need your help to fund the amazing game!' : `${numOfUnfundedGames.length} games remain unfunded. We need your help to fund these amazing games!`}`;
+const displayStr = `A total of $${totalAmountRaised.toLocaleString(
+  "en-us"
+)} has been raised for ${GAMES_JSON.length} games. Currently, ${
+  numOfUnfundedGames.length === 0
+    ? "All games are funded. Thank you for helping us!"
+    : numOfUnfundedGames.length === 1
+    ? "One game remains unfunded. We need your help to fund the amazing game!"
+    : `${numOfUnfundedGames.length} games remain unfunded. We need your help to fund these amazing games!`
+}`;
 
-
-// create a new DOM element containing the template string and append it to the description container. Use a template string to display how much money has been raised and for how many games, as well as explaining how many games currently remain unfunded. Use the ternary operatory (?) to make sure the statement is grammatically correct regardless of the number of unfunded games. 
+// create a new DOM element containing the template string and append it to the description container. Use a template string to display how much money has been raised and for how many games, as well as explaining how many games currently remain unfunded. Use the ternary operatory (?) to make sure the statement is grammatically correct regardless of the number of unfunded games.
 
 let descriptionParagraph = document.createElement("p");
 descriptionParagraph.innerHTML = displayStr;
 
-descriptionContainer.appendChild( descriptionParagraph);
+descriptionContainer.appendChild(descriptionParagraph);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
@@ -174,8 +183,8 @@ const sortedGames = GAMES_JSON.sort((item1, item2) => {
 // use destructuring and the spread operator to grab the first and second games
 const [firstGame, secondGame, ...rest] = sortedGames;
 
-console.log(JSON.stringify(firstGame.name) );
-console.log(JSON.stringify(secondGame.name) );
+console.log(JSON.stringify(firstGame.name));
+console.log(JSON.stringify(secondGame.name));
 
 console.log(JSON.stringify(...rest) + " ...rest");
 
@@ -183,7 +192,6 @@ console.log(JSON.stringify(...rest) + " ...rest");
 const topFundedGameFirst = document.createElement("h4");
 topFundedGameFirst.innerHTML = firstGame.name;
 firstGameContainer.appendChild(topFundedGameFirst);
-
 
 // do the same for the runner up item
 const topFundedGameRunner = document.createElement("h4");
