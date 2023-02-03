@@ -3,7 +3,7 @@
 Submitted by: **Rashed**
 
 **Sea Monster Crowdfunding** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
-Link for visiting the site: https://isomer04.github.io/simplecrowdfoundingwebsite/
+Link for visiting the site: https://isomer04.github.io/simpleCrowdfoundingWebsite/
 
 Time spent: **5** days spent in total
 
